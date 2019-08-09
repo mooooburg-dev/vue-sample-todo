@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <div class="container">
-      <h1 class="text-center">Todo 어플리케이션</h1>
-      <input type="text" class="form-control" v-model="userInput" />
+      <div class="col-md-6 offset-md-3">
+        <h1 class="text-center mb-4">Todo 어플리케이션</h1>
+        <input type="text" class="form-control" v-model="userInput" @keyup.enter="addNewTodo" />
+      </div>
     </div>
   </div>
 </template>
@@ -12,8 +14,15 @@ export default {
   name: 'app',
   data(){
     return {
-      userInput: ''
+      userInput: '',
+      todoList: []
     };
+  },
+  methods: {
+    addNewTodo(){
+      this.todoList.push(this.userInput);
+      this.userInput = '';
+    }
   },
   components: {
   }
