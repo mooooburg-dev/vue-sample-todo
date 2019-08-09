@@ -1,17 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <h1 class="text-center">Todo 어플리케이션</h1>
+      <input type="text" class="form-control" v-model="userInput" />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'app',
+  data(){
+    return {
+      userInput: ''
+    };
+  },
   components: {
-    HelloWorld
   }
 }
 </script>
