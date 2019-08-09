@@ -7,9 +7,10 @@
 
         <div class="list-group mb-4">
           <template v-for="todo in activeTodoList">
-            <button class="list-group-item text-left" @click="toggleTodoState(todo)">
-              {{ todo.label }}
-            </button>
+            <todo
+              :label="todo.label"
+              @componentClick="toggleTodoState(todo)"
+            />
           </template>
         </div>
 
@@ -24,6 +25,8 @@
 </template>
 
 <script>
+import Todo from './components/Todo';
+
 export default {
   name: 'app',
   data(){
@@ -54,6 +57,7 @@ export default {
     }
   },
   components: {
+    Todo
   }
 }
 </script>
